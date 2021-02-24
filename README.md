@@ -1,2 +1,2 @@
 # TestingApp
-Share form data from one screen to another screen
+Send data from one screen to another screen
