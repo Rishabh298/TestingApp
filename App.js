@@ -4,12 +4,16 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 class HomeScreen extends React.Component {
-  constructor(props)
-  {
-    super(props);
-    this.state={username: '', email:'', number:''};
+  //constructor(props)
+  //{
+    //super(props);
+    state={
+    username: '',
+    email:'', 
+    number:'',
+    };
  
-  }
+  //}
   render() {
     return (
       <View style={styles.container}>
@@ -32,8 +36,7 @@ class HomeScreen extends React.Component {
         />
         <Button
         title="About Page"
-        onPress={()=>this.props.navigation.navigate('About', {u1:this.state.username}, {e1:this.state.email},
-        {n1:this.state.number})}
+        onPress={()=>this.props.navigation.navigate('About', this.state)}
         />
         
     </View>
@@ -47,13 +50,13 @@ class AboutScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Text>
-         {this.props.navigation.state.params.u1}
+         {this.props.navigation.state.params.username}
           </Text>
         <Text>
-         {this.props.navigation.state.params.e1}
+         {this.props.navigation.state.params.email}
          </Text>
         <Text>
-         {this.props.navigation.state.params.n1}
+         {this.props.navigation.state.params.number}
         </Text>
       </View>
     );
